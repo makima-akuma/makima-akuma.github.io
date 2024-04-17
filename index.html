@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pulsing Text</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: black;
+                font-family: Arial, "Times New Roman", serif;
+            }
+
+            h1 {
+                padding: 0;
+                margin: 0;
+            }
+
+            .pulsing-text {
+                font-size: 48px;
+                color: white;
+                animation: pulse 1s infinite alternate;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+            .reveal-text {
+                font-size: 24px;
+                color: white;
+                opacity: 0;
+                animation: reveal 2s forwards;
+                margin-bottom: 40px;
+            }
+
+            .reveal-image {
+                opacity: 0;
+                animation: reveal 10s forwards, rotate 0.1s 20 alternate;
+            }
+
+            @keyframes pulse {
+                0% {
+                    text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+                    color: white;
+                }
+                100% {
+                    text-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+                    color: #FF4545;
+                }
+            }
+
+            @keyframes reveal {
+                0% {
+                    font-size: 24px;
+                    opacity: 0;
+                }
+                100% {
+                    font-size: 24px;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="pulsing-text">Teorias SD</h1>
+        <h1 class="reveal-text">Muito Brevemente</h1>
+        <img class="reveal-image" src="./assets/gragas.jpg" width="500" height="500" alt="Gragas Prime" />
+    </body>
+</html>
