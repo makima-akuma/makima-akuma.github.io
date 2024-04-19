@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import MainPage from "./pages/main-page";
 import LendasSuperEminem from "./pages/lendas-super-eminem";
 import './App.css';
 import ExamesSD from "./pages/exames-sd";
+import Header from "./main-components/header.tsx";
 
 function App() {
   return (
@@ -21,9 +22,14 @@ function App() {
 
 const GodComponent: React.FC = () => {
     return (
-        <div className='god-component'>
-            <Outlet/>
-        </div>
+        <main>
+            <header>
+                <Header/>
+            </header>
+            <main className='god-component'>
+                <Outlet/>
+            </main>
+        </main>
     );
 };
 
