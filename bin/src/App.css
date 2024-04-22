@@ -1,4 +1,4 @@
-html, body {
+html, body, #root {
   background: #151515;
   width: 100%;
   height: 100%;
@@ -10,6 +10,7 @@ html, body {
   margin-right: auto;
   color: white;
   max-width: 100%;
+  height: calc(100% - 95px);
 }
 
 .dummy-filler::after {
@@ -18,4 +19,12 @@ html, body {
   height: 0;
   padding-bottom: calc(100% / calc(64/79));
   width: 100%;
+}
+
+.movie-page {
+  height: 100%;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
 }

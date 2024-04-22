@@ -22,7 +22,7 @@ function App() {
 
 const GodComponent: React.FC = () => {
     return (
-        <main>
+        <main className="w-full h-full">
             <header>
                 <Header/>
             </header>

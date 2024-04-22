@@ -1,9 +1,10 @@
 import React from 'react';
+import IntroScene from "./components/IntroScene.tsx";
 
 const LendasSuperEminem: React.FC = () => {
     return (
-        <div>
-            <h1>Hello, World!</h1>
+        <div className="movie-page">
+            <IntroScene onComplete={() => {}}/>
         </div>
     );
 };

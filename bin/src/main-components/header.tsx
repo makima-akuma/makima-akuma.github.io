@@ -7,7 +7,8 @@ const containerStyle: React.CSSProperties = {
     borderBottom: '2px solid #505050',
     display: "flex",
     justifyContent: "center",
-    color: "white"
+    color: "white",
+    height: '95px'
 };
 
 const Header: React.FC = () => {
