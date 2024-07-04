@@ -17,8 +17,10 @@ interface IIntroScene {
 
 const IntroScene: React.FC<IIntroScene> = ({onComplete}) => {
 
-    const [hideText, setHideText] = useState<boolean>(true);
+    const audio = new Audio('audio/intro_music.mp3');
 
+
+    const [hideText, setHideText] = useState<boolean>(true);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const springs = useSpring({
         opacity: hideText ? 0 : 1,
@@ -39,9 +41,12 @@ const IntroScene: React.FC<IIntroScene> = ({onComplete}) => {
         }
     }
 
-    useEffect(() => {
-        const audio = new Audio('audio/intro_music.mp3');
+    function playAudio() {
         audio.play();
+    }
+
+    useEffect(() => {
+        playAudio();
 
         setTimeout(() => {
             initiateTransition(0);
@@ -53,11 +58,14 @@ const IntroScene: React.FC<IIntroScene> = ({onComplete}) => {
     }, []);
 
     return (
-        <section>
-            <animated.h1 className="text-5xl text-center font-bold" style={{borderRadius: 8, ...springs}}>
-                {texts[currentIndex]}
-            </animated.h1>
-        </section>
+        <>
+            <button onClick={playAudio}>Hello World</button>
+            <section>
+                <animated.h1 className="text-5xl text-center font-bold" style={{borderRadius: 8, ...springs}}>
+                    {texts[currentIndex]}
+                </animated.h1>
+            </section>
+        </>
     );
 
 }
